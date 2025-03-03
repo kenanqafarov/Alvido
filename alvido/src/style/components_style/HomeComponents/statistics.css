@@ -1,0 +1,114 @@
+.statistics {
+  margin-top: 120px;
+  margin-bottom: 500px;
+  > .staticsContainer {
+    width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    > .upperPart {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      .leftPart {
+        position: relative;
+
+        img {
+          height: 100px;
+          padding: 20px;
+          border-radius: 100%;
+          background-color: #003801;
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          width: 100px;
+          z-index: -1;
+          border-radius: 100%;
+          left: 0;
+          height: 100px;
+          background-color: #047f06;
+          animation: expandFade 2s ease-in-out infinite;
+        }
+        &::before {
+          position: absolute;
+          content: "";
+          width: 100px;
+          z-index: -1;
+          border-radius: 100%;
+          left: 0;
+          height: 100px;
+          background-color: #0fd712;
+          animation: expandFade 3s ease-in-out infinite;
+        }
+      }
+
+      > .rightPart {
+        > .title {
+          font-family: "Anton";
+          max-width: 800px;
+          width: 100%;
+          color: white;
+          font-size: 56px;
+          font-weight: 300;
+        }
+      }
+    }
+    > .contentPart {
+      font-family: "Poppins";
+      position: absolute;
+      width: 500px;
+      right: 420px;
+      > .row {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 30px;
+        row-gap: 30px;
+        > .element {
+          > .number-stat {
+            position: relative;
+            font-family: "Anton";
+            font-size: 100px;
+            font-weight: 500;
+            color: white;
+            text-align: left;
+            width: 300px;
+            border-bottom: 0.4px solid #98999a;
+            border-radius: 1px;
+            &::after {
+              position: absolute;
+              content: "";
+              width: 0%;
+              height: 0.4px;
+              background: #0fd712;
+              border-radius: 1px s;
+              bottom: 0;
+              left: 0;
+              transition: 0.5s ease;
+            }
+            &:hover::after {
+              width: 100%;
+            }
+          }
+          > .desc {
+            font-size: 10px;
+            font-size: 15px;
+            font-weight: 400;
+            color: #98999a;
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes expandFade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}

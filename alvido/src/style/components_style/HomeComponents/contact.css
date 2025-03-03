@@ -1,0 +1,194 @@
+
+
+.contact-content {
+  display: flex;
+  justify-content: center;
+  background-color: #05080a;
+  width: 100%;
+  height: 1200px;
+  margin-top: -60px;
+  font-family: "Poppins";
+
+  > .wrapper-contact {
+    position: relative;
+    width: 1250px;
+
+    > .topPart {
+      color: white;
+      font-family: "Anton", sans-serif;
+
+      > .contact-p {
+        position: absolute;
+        font-size: 80px;
+        font-weight: 900;
+        top: 80px;
+        letter-spacing: -2px;
+      }
+      > .project-p {
+        position: absolute;
+        font-size: 80px;
+        font-weight: 900;
+        top: 200px;
+        left: 270px;
+        -webkit-text-stroke-width: 1px;
+        color: transparent;
+        -webkit-text-stroke-color: #46f882;
+      }
+      > .project-p::before {
+        position: absolute;
+        content: "";
+        background-color: #46f882;
+        height: 1px;
+        width: 170px;
+        left: -220px;
+        top: 60px;
+        border-radius: 10px;
+      }
+    }
+    > .center-part {
+      > .formDesc {
+        color: #fefefee8;
+        position: absolute;
+        right: 20px;
+        top: 410px;
+        font-size: 20px;
+      }
+      > .socialIcons {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        gap: 10px;
+        color: #abaeae;
+        position: absolute;
+        right: 0;
+        top: 570px;
+        right: 375px;
+        > .icon {
+          transition: 0.4s ease;
+        }
+        > .icon:hover {
+          cursor: pointer;
+          color: #46f882;
+        }
+      }
+
+      > .center-part-p {
+        position: absolute;
+        color: white;
+        top: 350px;
+        left: 10px;
+        font-size: 40px;
+        font-weight: 900;
+        letter-spacing: -2px;
+      }
+      > .buttons {
+        position: absolute;
+        left: 10px;
+        top: 450px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: white;
+        > .button {
+          padding: 12px 30px;
+          border: 1px solid #abacac69;
+          font-weight: 600;
+          transition: 0.5s ease;
+        }
+        > .button:hover {
+          cursor: pointer;
+        }
+        > .active {
+          position: relative;
+          background-color: #46f882;
+          color: black;
+          z-index: 1;
+        }
+
+        /* > .active::after {
+          position: absolute;
+          z-index: -1;
+          background-color: transparent;
+          content: "";
+          margin: -28px -70px;
+          border: 1px solid #46f882;
+          height: 80px;
+          width: 80px;
+          border-radius: 100%;
+        } */
+      }
+    }
+    form {
+      position: absolute;
+      top: 550px;
+      left: 10px;
+      > .first-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        > .row {
+          position: relative;
+          > input {
+            color: white;
+
+            padding: 10px;
+            padding-right: 100px;
+            background: none;
+            border: none;
+            border-bottom: 1px solid #abacac69;
+            transition: 0.4s ease;
+          }
+          > input:focus {
+            outline: none;
+          }
+          > input:focus {
+            border-bottom: 1px solid #46f882;
+          }
+          > input:hover {
+            border-bottom: 1px solid #46f882;
+          }
+          > .user {
+            position: absolute;
+            color: #46f882;
+            right: 5px;
+            top: 15px;
+          }
+          > .letter {
+            position: absolute;
+            color: #46f882;
+            right: 5px;
+            top: 15px;
+          }
+        }
+      }
+      > .pen {
+        position: absolute;
+        color: #46f882;
+        right: 0;
+        font-size: 12px;
+        top: 60px;
+      }
+      > .desc {
+        color: white;
+        margin-top: 10px;
+        padding-left: 10px;
+        padding-top: 10px;
+        background: none;
+        border: none;
+        border-bottom: 1px solid #abacac69;
+        max-width: 620px;
+        height: 300px;
+        min-height: 100px;
+        width: 100%;
+        resize: vertical;
+      }
+      > .desc:hover {
+        border-bottom: 1px solid #46f882;
+      }
+      > .desc:focus {
+        outline: none;
+      }
+    }
+  }
+}

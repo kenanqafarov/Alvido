@@ -1,0 +1,117 @@
+:root {
+  --header-link-color: #f0f1f2;
+  --header-link-color-hover: #05080a;
+  --header-bg-color: #101214;
+  --header-link-color-bg-hover: #46f882;
+  --header-bordor-color: #404143;
+  --header-mail-color: #46f882;
+}
+
+header {
+  font-family: var(--header-font-family);
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  background-color: black;
+  .navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 1400px;
+    height: 100%;
+    .logo_part_header {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 40px;
+
+      img {
+        height: 42px;
+        position: relative;
+        z-index: 1;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 320px;
+        width: 310px;
+        padding: 1px 30px;
+        background-color: #161a1d;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+        z-index: -1;
+      }
+    }
+
+    > .headerLinks {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: 5px;
+      background-color: var(--header-bg-color);
+      border-radius: 50px;
+      border: 2px solid var(--header-bordor-color);
+      > a {
+        font-size: 16px;
+        padding: 10px 10px;
+        color: var(--header-link-color);
+        border-radius: 30px;
+        transition: 0.4s ease;
+        font-weight: 400;
+        letter-spacing: 1px;
+        &:hover {
+          cursor: pointer;
+          background-color: var(--header-link-color-bg-hover);
+          color: var(--header-link-color-hover);
+        }
+      }
+      .active {
+        background-color: var(--header-link-color-bg-hover);
+        color: var(--header-link-color-hover);
+      }
+    }
+    > .headerButtons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      > a {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: -1px;
+        color: var(--header-mail-color);
+      }
+      > .search-btn {
+        font-size: 20px;
+        color: white;
+      }
+      > img {
+        height: 60px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    .navBar {
+      .headerLinks {
+        display: none;
+      }
+      > .headerButtons {
+        > .search-btn,
+        a {
+          display: none;
+        }
+      }
+    }
+  }
+}

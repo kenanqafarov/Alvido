@@ -1,0 +1,100 @@
+:root {
+  --hero-title-color: #ffffff;
+  --hero-title-span-color: #46f882;
+  --hero-font-family: "Anton";
+  --upper-text-color: #b5b5b6;
+  --upper-social-media-icons-color: #b5b5b6;
+  --upper-text-font-family: "Poppins";
+  --social-media-icon-font-size: 18px;
+}
+
+.hero {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+
+  .hero_container {
+    width: 1400px;
+
+    > h1 {
+      font-family: var(--hero-font-family);
+      text-align: center;
+      color: var(--hero-title-color);
+      font-size: 224px;
+      font-weight: 400;
+      > span {
+        color: var(--hero-title-span-color);
+      }
+    }
+    > .upper_text_part {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      > .left_part_text {
+        margin-top: -40px;
+        font-size: 20px;
+        color: var(--upper-text-color);
+        font-weight: 400;
+        font-family: var(--upper-text-font-family);
+      }
+      > .social_media_icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        > a {
+          color: var(--upper-social-media-icons-color);
+          > .socialIcon {
+            transition: 0.5s ease;
+            cursor: pointer;
+            font-size: var(--social-media-icon-font-size);
+            &:hover {
+              color: #46f882;
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+    > .hero_image_container {
+      margin: 60px auto;
+      width: 100%;
+      height: 600px;
+      background: url("../../../images/hero_component_images/heroPartImage.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    > .hero_container {
+      > h1 {
+        font-size: 62px;
+      }
+      > .upper_text_part {
+        margin-top: 40px;
+        flex-direction: column;
+        > .left_part_text {
+          text-align: center;
+          font-size: 16px;
+        }
+        > .social_media_icons {
+          margin-top: 20px;
+
+          > .socialIcon {
+            font-size: 14px;
+          }
+        }
+      }
+      > .hero_image_container {
+        margin: 30px auto;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+  }
+}

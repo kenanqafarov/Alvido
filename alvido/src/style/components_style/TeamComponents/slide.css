@@ -1,0 +1,57 @@
+.carousel-app {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding-top: 200px;
+  padding-bottom: 50px;
+  margin-bottom: 120px;
+  font-family: "Poppins";
+
+  .marquee-wrapper {
+    display: flex;
+    gap: 40px;
+    width: max-content;
+    animation: marquee 15s linear infinite;
+    animation-play-state: running;
+    transition: 0.5s ease;
+  }
+  .marquee-wrapper:hover {
+    animation-play-state: paused;
+  }
+  .element {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    img {
+      padding: 20px;
+      border: 1px solid #46f882;
+      border-radius: 100%;
+    }
+
+    span {
+      font-size: 140px;
+      font-weight: 800;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #abacac69;
+      transition: 0.5s ease;
+    }
+
+    span:hover {
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+      color: #46f882;
+    }
+  }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
