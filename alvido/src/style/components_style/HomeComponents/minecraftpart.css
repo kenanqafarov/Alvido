@@ -15,11 +15,13 @@
       font-size: 30px;
       padding: 40px 45px;
       border-radius: 100%;
+      color: black;
       background-color: white;
       transition: 0.4s ease;
     }
     > .play:hover {
       cursor: pointer;
+      color: white;
       background-color: #46f882;
     }
   }
