@@ -1,117 +1,188 @@
 :root {
-  --header-link-color: #f0f1f2;
-  --header-link-color-hover: #05080a;
-  --header-bg-color: #101214;
-  --header-link-color-bg-hover: #46f882;
-  --header-bordor-color: #404143;
-  --header-mail-color: #46f882;
+  --primary-green: #46f882;
+  --dark-bg: #101214;
+  --light-text: #f0f1f2;
+  --active-bg: #2a2d31;
+  --hover-green: #34e670;
+  --highlight: #ffffff;
 }
 
 header {
-  font-family: var(--header-font-family);
+  background-color: black;
+  font-family: var(--header-font-family, sans-serif);
   display: flex;
   justify-content: center;
   position: sticky;
-  left: 0;
   top: 0;
+  left: 0;
   z-index: 999;
-  background-color: black;
-  .navBar {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 1400px;
-    height: 100%;
-    .logo_part_header {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px 40px;
+}
 
-      img {
-        height: 42px;
-        position: relative;
-        z-index: 1;
-      }
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1400px;
+  padding: 15px 30px;
+}
 
-      &::after {
-        content: "";
-        position: absolute;
-        height: 320px;
-        width: 310px;
-        padding: 1px 30px;
-        background-color: #161a1d;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
-        z-index: -1;
-      }
-    }
+.logo_part_header img {
+  height: 50px;
+}
 
-    > .headerLinks {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-      padding: 5px;
-      background-color: var(--header-bg-color);
-      border-radius: 50px;
-      border: 2px solid var(--header-bordor-color);
-      > a {
-        font-size: 16px;
-        padding: 10px 10px;
-        color: var(--header-link-color);
-        border-radius: 30px;
-        transition: 0.4s ease;
-        font-weight: 400;
-        letter-spacing: 1px;
-        &:hover {
-          cursor: pointer;
-          background-color: var(--header-link-color-bg-hover);
-          color: var(--header-link-color-hover);
-        }
-      }
-      .active {
-        background-color: var(--header-link-color-bg-hover);
-        color: var(--header-link-color-hover);
-      }
-    }
-    > .headerButtons {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      > a {
-        font-size: 16px;
-        font-weight: 600;
-        letter-spacing: -1px;
-        color: var(--header-mail-color);
-      }
-      > .search-btn {
-        font-size: 20px;
-        color: white;
-      }
-      > img {
-        height: 60px;
-      }
-    }
-  }
+.headerLinks {
+  display: flex;
+  gap: 30px;
+  padding: 8px 8px;
+  border-radius: 50px;
+  background-color: var(--dark-bg);
+  border: 2px solid #333;
+}
+
+.headerLinks a {
+  font-size: 18px;
+  padding: 12px 16px;
+  color: var(--light-text);
+  border-radius: 30px;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.headerLinks a:hover,
+.headerLinks .active {
+  background-color: var(--primary-green);
+  color: black;
+}
+
+.headerButtons {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.headerButtons a,
+.headerButtons button {
+  font-size: 18px;
+  color: var(--primary-green);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerButtons a:hover,
+.headerButtons button:hover {
+  color: var(--hover-green);
+  transform: scale(1.1);
+}
+
+.headerButtons .lang-btn {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 12px !important;
+  background-color: #222;
+  border-radius: 20px;
+  color: var(--primary-green);
+  border: 2px solid var(--primary-green);
+  transition: all 0.4s ease;
+}
+
+.headerButtons .lang-btn:hover {
+  background-color: var(--primary-green);
+  color: black;
+  transform: scale(1.05);
+}
+
+.headerButtons .toggle-mode {
+  font-size: 20px;
+}
+
+.headerButtons .signin-btn {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: black;
+  background-color: var(--primary-green);
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(70, 248, 130, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.headerButtons .signin-btn:hover {
+  background-color: var(--hover-green);
+  color: black;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(52, 230, 112, 0.4);
 }
 
 @media (max-width: 768px) {
-  header {
-    .navBar {
-      .headerLinks {
-        display: none;
-      }
-      > .headerButtons {
-        > .search-btn,
-        a {
-          display: none;
-        }
-      }
-    }
+  .navBar {
+    flex-direction: column;
+    gap: 10px;
   }
+
+  .headerLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.headerButtons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.headerButtons .lang-btn {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 8px 2px;
+  background-color: #222;
+  border-radius: 20px;
+  color: #46f882;
+  border: 2px solid #46f882;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.headerButtons .lang-btn:hover {
+  background-color: #46f882;
+  color: black;
+  transform: scale(1.05);
+}
+
+.headerButtons .icon-btn {
+  color: #46f882;
+  font-size: 22px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.headerButtons .icon-btn:hover {
+  color: #34e670;
+  transform: scale(1.2);
+}
+
+.headerButtons .signin-btn {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: black;
+  background-color: #46f882;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(70, 248, 130, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.headerButtons .signin-btn:hover {
+  background-color: #34e670;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(52, 230, 112, 0.4);
 }

@@ -14,7 +14,6 @@ import Footer from "../components/layout/Footer";
 function Home() {
   return (
     <div>
-      <Header />
       <Hero />
       <WhatWeDo />
       <Home_Slide />
@@ -22,7 +21,6 @@ function Home() {
       <MinecraftPart />
       <Statistics />
       <Contact />
-      <Footer />
     </div>
   );
 }

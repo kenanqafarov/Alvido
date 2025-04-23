@@ -10,11 +10,9 @@ import Footer from "../components/layout/Footer";
 function Team() {
   return (
     <>
-      <Header />
       <TeamMembers />
       <Team_Slide />
       <Contact />
-      <Footer />
     </>
   );
 }

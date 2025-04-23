@@ -11,7 +11,6 @@ import ContactComponent from "../components/General/ContactComponent";
 function Contact() {
   return (
     <>
-      <Header />
       <h1 className="title">
         Contact <span>Us</span>
       </h1>
@@ -36,7 +35,6 @@ function Contact() {
         <div className="right"></div>
       </div>
       <ContactComponent />
-      <Footer />
     </>
   );
 }
