@@ -10,7 +10,7 @@ import Footer from "../components/layout/Footer";
 function Team() {
   return (
     <>
-      <TeamMembers />
+      <TeamMembers isDarkMode={true} /> 
       <Team_Slide />
       <Contact />
     </>

@@ -23,7 +23,7 @@ function ContactComponent() {
     <>
       
       <div className="contact-content">
-        <div className="wrapper-contact" data-aos="fade-up">
+        <div className="wrapper-contact" >
           <div className="topPart">
             <p className="contact-p">CONTACT US</p>
             <p className="project-p">HAVE A PROJECT?</p>

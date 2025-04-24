@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { FaHeart, FaShoppingCart, FaMoon, FaSun, FaUser } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import logoWhite from "../../images/general/logoWhite.svg";
 import "../../style/layout_style/header.css";
+import LanguageContext from "../../context/LanguageContext";
+import ThemeContext from "../../context/ThemeContext";
 
 function Header() {
   const location = useLocation();
-  const [darkMode, setDarkMode] = useState(true);
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // Replace with actual auth logic
-  const [language, setLanguage] = useState("EN");
-
-  const toggleDarkMode = () => setDarkMode(prev => !prev);
-  const toggleLanguage = () => setLanguage(prev => (prev === "EN" ? "AZ" : "EN"));
+  const { language, toggleLanguage } = useContext(LanguageContext);
+  const { darkMode, toggleDarkMode } = useContext(ThemeContext);
+  const isAuthenticated = false; // Əsl auth ilə əvəz ediləcək
 
   return (
     <header className={darkMode ? "dark" : "light"}>

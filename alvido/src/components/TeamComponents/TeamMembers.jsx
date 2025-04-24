@@ -24,43 +24,42 @@ const teamMembers = [
   { id: 4, name: "Leyla Həsənli", position: "UI/UX Designer", image: member4 },
 ];
 
-function TeamMembers() {
+function TeamMembers({ isDarkMode = true }) {
   return (
-    <>
+    <div className={isDarkMode ? "team-container theme-dark" : "team-container theme-light"}>
       <h1 className="title">Our Team</h1>
-      <div className="team-container">
-        <Swiper
-          slidesPerView={3}
-          spaceBetween={30}
-          freeMode={true}
-          modules={[FreeMode]}
-          className="mySwiper"
-        >
-          {teamMembers.map((member) => (
-            <SwiperSlide key={member.id}>
-              <div className="teamMember">
-                <div className="topPart">
-                  <img src={member.image} alt={member.name} />
-                  <p className="position">{member.position}</p>
-                </div>
-                <div className="bottomPart">
-                  <p className="member-name">{member.name}</p>
-                  <p className="member-desc">
-                    Passionate about innovation and technology.
-                  </p>
-                </div>
-                <div className="social-icons">
-                  <CiInstagram className="icon" />
-                  <FaGithub className="icon" />
-                  <CiLinkedin className="icon" />
-                </div>
+      <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        freeMode={true}
+        modules={[FreeMode]}
+        className="mySwiper"
+      >
+        {teamMembers.map((member) => (
+          <SwiperSlide key={member.id}>
+            <div className="teamMember">
+              <div className="topPart">
+                <img src={member.image} alt={member.name} />
+                <p className="position">{member.position}</p>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </>
+              <div className="bottomPart">
+                <p className="member-name">{member.name}</p>
+                <p className="member-desc">
+                  Passionate about innovation and technology.
+                </p>
+              </div>
+              <div className="social-icons">
+                <CiInstagram className="icon" />
+                <FaGithub className="icon" />
+                <CiLinkedin className="icon" />
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 }
+
 
 export default TeamMembers;
